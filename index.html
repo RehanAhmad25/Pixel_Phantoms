@@ -13,6 +13,31 @@
     <link rel="stylesheet" href="css/stats-widget.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Restore compact footer layout on homepage to match other pages */
+        .site-footer {
+            background: linear-gradient(135deg, var(--footer-bg) 0%, var(--footer-bg-secondary) 100%);
+            color: var(--footer-text);
+            padding: 4rem 0 0;
+            margin-top: auto;
+            border-top: 1px solid var(--footer-border);
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr 2fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            padding: 0 2rem;
+            box-sizing: border-box;
+        }
+        .footer-bottom { padding: 2rem 0; }
+    </style>
 </head>
 <body class="hacker-theme">
 
@@ -393,36 +418,14 @@
 
     <div id="footer-placeholder"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
-    <script src="js/navbar.min.js"></script>
-    <script src="js/footer.js"></script>
-    <script>
-        // Render these immediately so the theme.js can find the toggle switch
-        renderNavbar('');
-        renderFooter('');
-        
-        // Focus management for skip link
-        document.addEventListener('DOMContentLoaded', function() {
-            const skipLink = document.getElementById('skip-link');
-            const mainContent = document.getElementById('main-content');
-            
-            skipLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                mainContent.setAttribute('tabindex', '-1');
-                mainContent.focus();
-            });
-        });
-    </script>
+<script src="js/footer.js"></script>
+<script>
+    renderFooter();
+</script>
 
-    <script src="js/theme.min.js"></script>
-    <script src="js/back-to-top.min.js"></script>
-    <script src="js/home-gsap.min.js"></script>
-    <script src="js/home-leaderboard.min.js"></script>
-    <script src="js/quick-stats.js"></script>
-    <script src="js/theme-enhanced.js"></script>
-    <script src="js/share-button.js"></script>
+<script src="js/theme.min.js"></script>
+<script src="js/back-to-top.min.js"></script>
+
     
     <script>
         // Initialize quick stats widget for home page
